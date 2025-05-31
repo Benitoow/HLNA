@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HLNA Chat - Interface Évolutive</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#FFD700">
+    <meta name="description" content="Interface de chat avec HLNA - Intelligence Artificielle Évolutive">
+    <link rel="stylesheet" href="src/ui/chat-new.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body class="chat-body">
+    <!-- Header minimaliste -->
+    <header class="chat-header-minimal">
+        <div class="header-content">
+            <a href="index.html" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Retour
+            </a>            <div class="hlna-status">
+                <div class="status-dot animate-pulse"></div>
+                <span>HLNA-1 • Actif</span>
+                <div class="system-status" id="system-status">
+                    <span class="status-indicator core" id="core-status">●</span>
+                    <span class="status-indicator analytics" id="analytics-status">●</span>
+                    <span class="status-indicator web" id="web-status">●</span>
+                </div>
+            </div>
+            <button class="menu-toggle" id="menu-toggle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Interface chat principal -->
+    <main class="chat-container-new">
+        <!-- Zone de conversation -->
+        <div class="conversation-area">
+            <div class="messages-container" id="messages-container">
+                <!-- Message de bienvenue sobre -->
+                <div class="message-system welcome-message">
+                    <div class="system-avatar">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                            <path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="system-content">
+                        <h3>Bonjour ! Je suis HLNA 👋</h3>
+                        <p>Une IA qui apprend, comprend et imagine. Posez-moi n'importe quelle question naturellement - pas besoin de prompts compliqués.</p>
+                        <div class="quick-starters">
+                            <button class="starter-chip">💭 Comment ça va ?</button>
+                            <button class="starter-chip">🤔 Explique-moi quelque chose</button>
+                            <button class="starter-chip">✨ Aide-moi à créer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Zone de saisie repensée -->
+            <div class="input-area-new">
+                <div class="input-container-new">
+                    <div class="input-wrapper-new">
+                        <textarea 
+                            id="chat-input-new" 
+                            placeholder="Écrivez naturellement..."
+                            rows="1"
+                            autofocus
+                        ></textarea>
+                        <div class="input-actions-new">
+                            <button class="action-btn voice-btn" id="voice-btn" title="Reconnaissance vocale">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                                    <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M19 10v2a7 7 0 0 1-14 0v-2" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </button>
+                            <button class="send-btn-new" id="send-btn-new" disabled>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Indicateur de frappe HLNA -->
+                    <div class="typing-indicator-new" id="typing-indicator-new" style="display: none;">
+                        <div class="typing-avatar">H</div>
+                        <div class="typing-animation">
+                            <div class="typing-dot"></div>
+                            <div class="typing-dot"></div>
+                            <div class="typing-dot"></div>
+                        </div>
+                        <span class="typing-text">HLNA réfléchit...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Panneau latéral contextuel -->
+        <aside class="context-panel" id="context-panel">
+            <div class="panel-header">
+                <h3>Assistant Contextuel</h3>
+                <button class="close-panel" id="close-panel">×</button>
+            </div>
+            
+            <div class="panel-content">
+                <!-- Mode HLNA -->
+                <div class="context-section">
+                    <h4>🧠 Mode HLNA</h4>
+                    <div class="mode-selector">
+                        <button class="mode-btn active" data-mode="natural">Naturel</button>
+                        <button class="mode-btn" data-mode="creative">Créatif</button>
+                        <button class="mode-btn" data-mode="analytical">Analyse</button>
+                    </div>
+                </div>
+
+                <!-- Analyse en temps réel -->
+                <div class="context-section">
+                    <h4>📊 Analyse</h4>
+                    <div class="analysis-display">
+                        <div class="metric">
+                            <span class="metric-label">Émotion</span>
+                            <span class="metric-value" id="emotion-metric">Neutre</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Complexité</span>
+                            <div class="complexity-bar">
+                                <div class="complexity-fill" id="complexity-fill"></div>
+                            </div>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Engagement</span>
+                            <span class="metric-value" id="engagement-metric">Actif</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mémoire contextuelle -->
+                <div class="context-section">
+                    <h4>💭 Mémoire</h4>
+                    <div class="memory-items" id="memory-items">
+                        <div class="memory-item">Première conversation</div>
+                    </div>
+                </div>
+
+                <!-- Actions rapides -->
+                <div class="context-section">
+                    <h4>⚡ Actions</h4>
+                    <div class="quick-actions">
+                        <button class="action-btn-small">✨ Inspire-moi</button>
+                        <button class="action-btn-small">🔍 Analyse</button>
+                        <button class="action-btn-small">📚 Histoire</button>
+                        <button class="action-btn-small">🎨 Créatif</button>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Overlay pour mobile -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>    <!-- Scripts -->
+    <script src="src/modules/analytics.js"></script>
+    <script src="src/modules/web-connection.js"></script>
+    <script src="src/core/hlna-core.js"></script>
+    <script src="src/ui/chat-new.js"></script>
+    <script src="src/tests/integration-test.js"></script>
+    <script>
+        // Enregistrement du Service Worker pour PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((registration) => {
+                        console.log('HLNA SW enregistré: ', registration.scope);
+                    })
+                    .catch((registrationError) => {
+                        console.log('HLNA SW échec: ', registrationError);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>

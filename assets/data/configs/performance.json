@@ -1,0 +1,80 @@
+{
+  "hlna": {
+    "performance": {
+      "version": "2.0.0",
+      "optimizations": {
+        "moduleLoading": {
+          "enabled": true,
+          "strategy": "lazy",
+          "preload": ["core", "ui"],
+          "defer": ["analytics", "web-connection"],
+          "description": "Optimise le chargement des modules pour réduire le temps d'initialisation"
+        },
+        "assetOptimization": {
+          "enabled": true,
+          "compression": "gzip",
+          "caching": {
+            "css": "1h",
+            "js": "1h", 
+            "images": "24h",
+            "fonts": "7d"
+          },
+          "description": "Configuration du cache et compression des assets"
+        },
+        "codeMinification": {
+          "enabled": false,
+          "target": "production",
+          "tools": ["terser", "csso"],
+          "description": "Minification du code pour la production"
+        },
+        "bundling": {
+          "enabled": false,
+          "strategy": "split",
+          "chunks": {
+            "core": ["hlna-core.js"],
+            "modules": ["analytics.js", "web-connection.js"],
+            "ui": ["script.js", "styles.css"]
+          },
+          "description": "Regroupement des modules pour optimiser les requêtes réseau"
+        }
+      },
+      "monitoring": {
+        "performanceApi": true,
+        "memoryTracking": true,
+        "loadTimeTracking": true,
+        "userInteractionTracking": false,
+        "description": "Surveillance des performances en temps réel"
+      },
+      "thresholds": {
+        "loadTime": {
+          "good": 500,
+          "acceptable": 1000,
+          "poor": 2000,
+          "unit": "ms"
+        },
+        "memoryUsage": {
+          "good": 50,
+          "acceptable": 100,
+          "poor": 200,
+          "unit": "MB"
+        },
+        "moduleCount": {
+          "maximum": 10,
+          "warning": 8
+        }
+      }
+    },
+    "development": {
+      "hotReload": false,
+      "sourceMap": true,
+      "debugging": true,
+      "verboseLogging": false
+    },
+    "production": {
+      "compression": true,
+      "minification": true,
+      "treeshaking": true,
+      "analytics": true
+    }
+  }
+}

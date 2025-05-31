@@ -1,0 +1,31 @@
+{
+  "name": "hlna-ai",
+  "version": "0.1.0",
+  "description": "Intelligence Artificielle Évolutive - HLNA",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "python -m http.server 8000",
+    "build": "echo 'Build process to be implemented'",
+    "test": "echo 'Tests to be implemented'",
+    "lint": "echo 'Linting to be implemented'"
+  },
+  "keywords": [
+    "ai",
+    "artificial-intelligence",
+    "chatbot",
+    "conversational-ai",
+    "pwa",
+    "progressive-web-app"
+  ],
+  "author": "HLNA Project",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/starx/hlna.git"
+  },
+  "bugs": {
+    "url": "https://github.com/starx/hlna/issues"
+  },
+  "homepage": "https://github.com/starx/hlna#readme"
+}

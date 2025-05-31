@@ -1,0 +1,77 @@
+{
+  "name": "HLNA Light Theme",
+  "version": "1.0.0",
+  "type": "light",
+  "colors": {
+    "primary": "#667eea",
+    "secondary": "#764ba2",
+    "accent": "#00aa66",
+    "background": "#ffffff",
+    "surface": "#f8f9fa",
+    "surface-variant": "#e9ecef",
+    "text": "#212529",
+    "text-secondary": "#495057",
+    "text-muted": "#6c757d",
+    "border": "#dee2e6",
+    "border-light": "#e9ecef",
+    "success": "#00aa66",
+    "warning": "#fd7e14",
+    "error": "#dc3545",
+    "info": "#0d6efd"
+  },
+  "typography": {
+    "font-family": "'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif",
+    "font-family-mono": "'Fira Code', 'Monaco', 'Consolas', monospace",
+    "sizes": {
+      "xs": "0.75rem",
+      "sm": "0.875rem",
+      "base": "1rem",
+      "lg": "1.125rem",
+      "xl": "1.25rem",
+      "2xl": "1.5rem",
+      "3xl": "1.875rem",
+      "4xl": "2.25rem"
+    },
+    "weights": {
+      "light": 300,
+      "normal": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700
+    }
+  },
+  "spacing": {
+    "xs": "0.25rem",
+    "sm": "0.5rem",
+    "md": "1rem",
+    "lg": "1.5rem",
+    "xl": "2rem",
+    "2xl": "3rem",
+    "3xl": "4rem"
+  },
+  "borderRadius": {
+    "sm": "0.25rem",
+    "md": "0.5rem",
+    "lg": "0.75rem",
+    "xl": "1rem",
+    "full": "9999px"
+  },
+  "shadows": {
+    "sm": "0 1px 2px rgba(0, 0, 0, 0.1)",
+    "md": "0 4px 6px rgba(0, 0, 0, 0.1)",
+    "lg": "0 10px 15px rgba(0, 0, 0, 0.1)",
+    "xl": "0 20px 25px rgba(0, 0, 0, 0.1)"
+  },
+  "animations": {
+    "duration": {
+      "fast": "150ms",
+      "normal": "300ms",
+      "slow": "500ms"
+    },
+    "easing": {
+      "ease-out": "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+      "ease-in": "cubic-bezier(0.55, 0.055, 0.675, 0.19)",
+      "ease-in-out": "cubic-bezier(0.645, 0.045, 0.355, 1.000)"
+    }
+  }
+}
