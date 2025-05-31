@@ -1,0 +1,73 @@
+{
+  "hlnaThemeConfig": {
+    "version": "1.0.0",
+    "defaultTheme": "dark",
+    "enableTransitions": true,
+    "enableNotifications": true,
+    "enableSystemPreference": true,
+    "transitionDuration": 300,
+    "themes": {
+      "dark": {
+        "name": "Sombre",
+        "description": "Thème sombre optimisé pour une utilisation prolongée",
+        "cssFile": "assets/themes/dark/theme.css",
+        "icon": "sun",
+        "colors": {
+          "primary": "#667eea",
+          "secondary": "#764ba2",
+          "accent": "#00ff88",
+          "background": "#1a1a1a",
+          "surface": "#2d2d2d",
+          "text": "#ffffff"
+        },
+        "features": {
+          "eyeStrain": "low",
+          "contrast": "high",
+          "nightMode": true
+        }
+      },
+      "light": {
+        "name": "Clair",
+        "description": "Thème clair pour une utilisation en journée",
+        "cssFile": "assets/themes/light/theme.css",
+        "icon": "moon",
+        "colors": {
+          "primary": "#667eea",
+          "secondary": "#764ba2",
+          "accent": "#00aa66",
+          "background": "#ffffff",
+          "surface": "#f8f9fa",
+          "text": "#212529"
+        },
+        "features": {
+          "eyeStrain": "medium",
+          "contrast": "high",
+          "nightMode": false
+        }
+      }
+    },
+    "accessibility": {
+      "respectReducedMotion": true,
+      "highContrastMode": false,
+      "focusVisible": true,
+      "keyboardNavigation": true
+    },
+    "performance": {
+      "enableOptimizations": true,
+      "preloadThemes": false,
+      "lazyLoadCSS": false,
+      "enableWillChange": true
+    },
+    "integration": {
+      "analyticsTracking": true,
+      "modeBasedTheming": true,
+      "autoThemeSuggestion": true,
+      "systemThemeSync": true
+    },
+    "customization": {
+      "allowUserCSS": false,
+      "enableThemeCreator": false,
+      "exportThemeSettings": true
+    }
+  }
+}

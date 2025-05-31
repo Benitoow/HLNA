@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation HLNA - API & Intégration</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="docs.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cosmic-background">
+        <div class="stars"></div>
+        <div class="particles"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none;">
+                    <span class="logo-text">HLNA</span>
+                </a>
+                <div class="logo-pulse"></div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="index.html#about" class="nav-link">À Propos</a></li>
+                <li><a href="chat.html" class="nav-link">Essayer HLNA</a></li>
+                <li><a href="#" class="nav-link active">Documentation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="docs-main">
+        <div class="docs-container">
+            <aside class="docs-sidebar">
+                <div class="sidebar-content">
+                    <h3>📚 Navigation</h3>
+                    <ul class="docs-nav">
+                        <li><a href="#introduction" class="nav-item active">Introduction</a></li>
+                        <li><a href="#architecture" class="nav-item">Architecture</a></li>
+                        <li><a href="#api-reference" class="nav-item">API Référence</a></li>
+                        <li><a href="#models" class="nav-item">Modèles</a></li>
+                        <li><a href="#integration" class="nav-item">Intégration</a></li>
+                        <li><a href="#examples" class="nav-item">Exemples</a></li>
+                        <li><a href="#support" class="nav-item">Support</a></li>
+                    </ul>
+                    
+                    <div class="api-status">
+                        <h4>🟢 Statut API</h4>
+                        <div class="status-item">
+                            <span class="status-dot online"></span>
+                            <span>HLNA-1-Avis</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-dot maintenance"></span>
+                            <span>Sandbox</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <div class="docs-content">
+                <section id="introduction" class="doc-section">
+                    <h1>Documentation HLNA</h1>
+                    <p class="lead">Bienvenue dans la documentation officielle de HLNA, l'intelligence artificielle évolutive qui apprend et grandit avec chaque interaction.</p>
+                    
+                    <div class="info-card">
+                        <h3>🚀 Démarrage Rapide</h3>
+                        <p>HLNA révolutionne l'IA en introduisant la mémoire persistante et l'apprentissage adaptatif. Contrairement aux modèles traditionnels, HLNA évolue réellement au fil des conversations.</p>
+                        <div class="quick-links">
+                            <a href="chat.html" class="quick-link">Essayer l'interface</a>
+                            <a href="#api-reference" class="quick-link">API Référence</a>
+                            <a href="#examples" class="quick-link">Voir les exemples</a>
+                        </div>
+                    </div>
+
+                    <div class="feature-highlights">
+                        <div class="highlight-card">
+                            <div class="highlight-icon">🧠</div>
+                            <h4>Mémoire Évolutive</h4>
+                            <p>Système de mémoire qui se développe et s'organise automatiquement</p>
+                        </div>
+                        <div class="highlight-card">
+                            <div class="highlight-icon">🔄</div>
+                            <h4>Apprentissage Continu</h4>
+                            <p>Adaptation en temps réel sans nécessiter de réentraînement</p>
+                        </div>
+                        <div class="highlight-card">
+                            <div class="highlight-icon">💡</div>
+                            <h4>Intelligence Contextuelle</h4>
+                            <p>Compréhension profonde des nuances et du contexte</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="architecture" class="doc-section">
+                    <h2>Architecture HLNA</h2>
+                    <p>HLNA utilise une architecture hybride innovante combinant transformers avancés et systèmes de mémoire adaptative.</p>
+
+                    <div class="architecture-diagram">
+                        <div class="arch-layer">
+                            <h4>Interface Utilisateur</h4>
+                            <div class="arch-components">
+                                <span class="component">Chat Web</span>
+                                <span class="component">API REST</span>
+                                <span class="component">WebSocket</span>
+                            </div>
+                        </div>
+                        <div class="arch-layer">
+                            <h4>Couche de Traitement</h4>
+                            <div class="arch-components">
+                                <span class="component">Analyseur Contextuel</span>
+                                <span class="component">Gestionnaire de Mémoire</span>
+                                <span class="component">Moteur d'Adaptation</span>
+                            </div>
+                        </div>
+                        <div class="arch-layer">
+                            <h4>Intelligence Artificielle</h4>
+                            <div class="arch-components">
+                                <span class="component">HLNA-1-Avis</span>
+                                <span class="component">Réseau Neuronal</span>
+                                <span class="component">Base de Connaissances</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tech-specs">
+                        <h3>Spécifications Techniques</h3>
+                        <ul>
+                            <li><strong>Modèle Base :</strong> Architecture Transformer optimisée</li>
+                            <li><strong>Mémoire :</strong> Système vectoriel adaptatif</li>
+                            <li><strong>Latence :</strong> < 500ms pour les réponses standard</li>
+                            <li><strong>Capacité :</strong> Contexte étendu jusqu'à 32k tokens</li>
+                            <li><strong>Langues :</strong> Français, Anglais (autres en développement)</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="api-reference" class="doc-section">
+                    <h2>Référence API</h2>
+                    <p>L'API HLNA permet d'intégrer facilement nos modèles dans vos applications.</p>
+
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <span class="method post">POST</span>
+                            <span class="endpoint-url">/api/v1/chat</span>
+                        </div>
+                        <div class="endpoint-body">
+                            <h4>Démarrer une conversation</h4>
+                            <p>Envoyez un message à HLNA et recevez une réponse contextuelle.</p>
+                            
+                            <div class="code-example">
+                                <div class="code-header">
+                                    <span>Requête</span>
+                                    <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                                </div>
+                                <pre><code class="language-json">{
+  "message": "Bonjour HLNA, comment vas-tu ?",
+  "session_id": "optional-session-id",
+  "model": "hlna-1-avis",
+  "options": {
+    "memory_enabled": true,
+    "learning_mode": "adaptive"
+  }
+}</code></pre>
+                            </div>
+
+                            <div class="code-example">
+                                <div class="code-header">
+                                    <span>Réponse</span>
+                                    <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                                </div>
+                                <pre><code class="language-json">{
+  "response": "Bonjour ! Je vais bien, merci. En tant qu'IA évolutive, chaque interaction me permet d'apprendre et de grandir...",
+  "session_id": "sess_abc123",
+  "memory_updated": true,
+  "learning_insights": 3,
+  "model_version": "hlna-1-avis-2025.1",
+  "timestamp": "2025-05-31T10:30:00Z"
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <span class="method get">GET</span>
+                            <span class="endpoint-url">/api/v1/session/{session_id}</span>
+                        </div>
+                        <div class="endpoint-body">
+                            <h4>Récupérer l'état d'une session</h4>
+                            <p>Obtenez les informations sur une session active incluant la mémoire et les insights.</p>
+                        </div>
+                    </div>
+
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <span class="method post">POST</span>
+                            <span class="endpoint-url">/api/v1/memory/export</span>
+                        </div>
+                        <div class="endpoint-body">
+                            <h4>Exporter la mémoire</h4>
+                            <p>Exportez la mémoire d'une session pour analyse ou sauvegarde.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="models" class="doc-section">
+                    <h2>Modèles Disponibles</h2>
+                    
+                    <div class="model-card-docs">
+                        <div class="model-header-docs">
+                            <h3>HLNA-1-Avis</h3>
+                            <span class="model-badge stable">Stable</span>
+                        </div>
+                        <div class="model-details-docs">
+                            <p>Premier modèle de la famille HLNA, spécialisé dans l'analyse et le conseil personnalisé.</p>
+                            
+                            <div class="model-specs">
+                                <div class="spec-item">
+                                    <span class="spec-label">Paramètres :</span>
+                                    <span class="spec-value">7.5B</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Contexte :</span>
+                                    <span class="spec-value">32k tokens</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Spécialités :</span>
+                                    <span class="spec-value">Analyse, Conseil, Conversation</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Mémoire :</span>
+                                    <span class="spec-value">Adaptive vectorielle</span>
+                                </div>
+                            </div>
+
+                            <div class="capabilities-docs">
+                                <h4>Capacités Clés</h4>
+                                <ul>
+                                    <li>Analyse contextuelle avancée</li>
+                                    <li>Conseils personnalisés et adaptatifs</li>
+                                    <li>Mémoire conversationnelle évolutive</li>
+                                    <li>Compréhension émotionnelle</li>
+                                    <li>Apprentissage continu en temps réel</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="upcoming-models">
+                        <h3>🔮 Modèles en Développement</h3>
+                        <div class="upcoming-grid">
+                            <div class="upcoming-card">
+                                <h4>HLNA-2-Creative</h4>
+                                <p>Spécialisé dans la création artistique et l'innovation</p>
+                                <span class="release-date">Q3 2025</span>
+                            </div>
+                            <div class="upcoming-card">
+                                <h4>HLNA-3-Analysis</h4>
+                                <p>Expert en analyse de données et insights business</p>
+                                <span class="release-date">Q4 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="integration" class="doc-section">
+                    <h2>Guide d'Intégration</h2>
+                    
+                    <div class="integration-tabs">
+                        <div class="tab-buttons">
+                            <button class="tab-btn active" onclick="showTab('javascript')">JavaScript</button>
+                            <button class="tab-btn" onclick="showTab('python')">Python</button>
+                            <button class="tab-btn" onclick="showTab('curl')">cURL</button>
+                        </div>
+
+                        <div class="tab-content active" id="javascript">
+                            <div class="code-example">
+                                <div class="code-header">
+                                    <span>SDK JavaScript</span>
+                                    <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                                </div>
+                                <pre><code class="language-javascript">import { HLNA } from '@hlna/sdk';
+
+const hlna = new HLNA({
+  apiKey: 'your-api-key',
+  model: 'hlna-1-avis'
+});
+
+// Démarrer une conversation
+const response = await hlna.chat({
+  message: "Bonjour HLNA !",
+  memoryEnabled: true
+});
+
+console.log(response.text);
+// "Bonjour ! Ravi de faire votre connaissance..."
+
+// Continuer la conversation
+const followUp = await hlna.chat({
+  message: "Peux-tu m'aider avec un projet ?",
+  sessionId: response.sessionId
+});
+</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="tab-content" id="python">
+                            <div class="code-example">
+                                <div class="code-header">
+                                    <span>SDK Python</span>
+                                    <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                                </div>
+                                <pre><code class="language-python">from hlna import HLNA
+
+# Initialiser le client
+client = HLNA(api_key="your-api-key")
+
+# Créer une session
+session = client.create_session(model="hlna-1-avis")
+
+# Envoyer un message
+response = session.chat("Bonjour HLNA !")
+print(response.text)
+
+# La mémoire est automatiquement gérée
+response2 = session.chat("Te souviens-tu de ce que je viens de dire ?")
+print(f"Mémoire mise à jour: {response2.memory_updated}")
+</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="tab-content" id="curl">
+                            <div class="code-example">
+                                <div class="code-header">
+                                    <span>cURL</span>
+                                    <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                                </div>
+                                <pre><code class="language-bash">curl -X POST https://api.hlna.ai/v1/chat \
+  -H "Authorization: Bearer your-api-key" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "message": "Bonjour HLNA !",
+    "model": "hlna-1-avis",
+    "options": {
+      "memory_enabled": true,
+      "learning_mode": "adaptive"
+    }
+  }'
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="examples" class="doc-section">
+                    <h2>Exemples d'Usage</h2>
+                    
+                    <div class="example-grid">
+                        <div class="example-card">
+                            <h3>🎯 Assistant Personnel</h3>
+                            <p>Créez un assistant qui apprend vos préférences et s'adapte à votre style de travail.</p>
+                            <a href="#" class="example-link">Voir l'exemple →</a>
+                        </div>
+                        
+                        <div class="example-card">
+                            <h3>📊 Analyste Business</h3>
+                            <p>Intégrez HLNA pour analyser des données et fournir des insights personnalisés.</p>
+                            <a href="#" class="example-link">Voir l'exemple →</a>
+                        </div>
+                        
+                        <div class="example-card">
+                            <h3>🎓 Tuteur Adaptatif</h3>
+                            <p>Créez un système d'apprentissage qui s'adapte au niveau de chaque apprenant.</p>
+                            <a href="#" class="example-link">Voir l'exemple →</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="support" class="doc-section">
+                    <h2>Support & Communauté</h2>
+                    
+                    <div class="support-grid">
+                        <div class="support-card">
+                            <h3>📖 Ressources</h3>
+                            <ul>
+                                <li><a href="#">Guide de démarrage rapide</a></li>
+                                <li><a href="#">FAQ complète</a></li>
+                                <li><a href="#">Meilleures pratiques</a></li>
+                                <li><a href="#">Changelog</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="support-card">
+                            <h3>💬 Communauté</h3>
+                            <ul>
+                                <li><a href="#">Discord officiel</a></li>
+                                <li><a href="#">Forum développeurs</a></li>
+                                <li><a href="#">GitHub</a></li>
+                                <li><a href="#">Blog technique</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="support-card">
+                            <h3>🆘 Support Technique</h3>
+                            <ul>
+                                <li><a href="#">Créer un ticket</a></li>
+                                <li><a href="#">Documentation API</a></li>
+                                <li><a href="#">Status page</a></li>
+                                <li><a href="#">Contact enterprise</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="docs.js"></script>
+</body>
+</html>

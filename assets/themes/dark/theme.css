@@ -1,0 +1,122 @@
+/* HLNA Dark Theme CSS - Généré depuis theme.json */
+
+:root[data-theme="dark"] {
+    /* Couleurs principales */
+    --theme-primary: #667eea;
+    --theme-secondary: #764ba2;
+    --theme-accent: #00ff88;
+    --theme-background: #1a1a1a;
+    --theme-surface: #2d2d2d;
+    --theme-surface-variant: #404040;
+    
+    /* Texte */
+    --theme-text: #ffffff;
+    --theme-text-secondary: #b3b3b3;
+    --theme-text-muted: #808080;
+    
+    /* Bordures */
+    --theme-border: #404040;
+    --theme-border-light: #555555;
+    
+    /* États */
+    --theme-success: #00ff88;
+    --theme-warning: #ffb347;
+    --theme-error: #ff6b6b;
+    --theme-info: #4facfe;
+    
+    /* Typographie */
+    --theme-font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    --theme-font-family-mono: 'Fira Code', 'Monaco', 'Consolas', monospace;
+    
+    /* Tailles */
+    --theme-text-xs: 0.75rem;
+    --theme-text-sm: 0.875rem;
+    --theme-text-base: 1rem;
+    --theme-text-lg: 1.125rem;
+    --theme-text-xl: 1.25rem;
+    --theme-text-2xl: 1.5rem;
+    --theme-text-3xl: 1.875rem;
+    --theme-text-4xl: 2.25rem;
+    
+    /* Poids */
+    --theme-font-light: 300;
+    --theme-font-normal: 400;
+    --theme-font-medium: 500;
+    --theme-font-semibold: 600;
+    --theme-font-bold: 700;
+    
+    /* Espacement */
+    --theme-space-xs: 0.25rem;
+    --theme-space-sm: 0.5rem;
+    --theme-space-md: 1rem;
+    --theme-space-lg: 1.5rem;
+    --theme-space-xl: 2rem;
+    --theme-space-2xl: 3rem;
+    --theme-space-3xl: 4rem;
+    
+    /* Bordures arrondies */
+    --theme-radius-sm: 0.25rem;
+    --theme-radius-md: 0.5rem;
+    --theme-radius-lg: 0.75rem;
+    --theme-radius-xl: 1rem;
+    --theme-radius-full: 9999px;
+    
+    /* Ombres */
+    --theme-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --theme-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --theme-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.3);
+    --theme-shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.3);
+    
+    /* Animations */
+    --theme-duration-fast: 150ms;
+    --theme-duration-normal: 300ms;
+    --theme-duration-slow: 500ms;
+    --theme-easing-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --theme-easing-in: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    --theme-easing-in-out: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+/* Application du thème sombre */
+[data-theme="dark"] {
+    background-color: var(--theme-background);
+    color: var(--theme-text);
+}
+
+[data-theme="dark"] .chat-container {
+    background: var(--theme-surface);
+    border-color: var(--theme-border);
+    box-shadow: var(--theme-shadow-lg);
+}
+
+[data-theme="dark"] .message-input {
+    background: var(--theme-surface-variant);
+    border-color: var(--theme-border-light);
+    color: var(--theme-text);
+}
+
+[data-theme="dark"] .btn-primary {
+    background: linear-gradient(135deg, var(--theme-primary), var(--theme-secondary));
+    color: var(--theme-text);
+}
+
+[data-theme="dark"] .status-dot {
+    background: var(--theme-accent);
+    box-shadow: 0 0 10px var(--theme-accent);
+}
+
+[data-theme="dark"] .hlna-message {
+    background: var(--theme-surface-variant);
+    border-left: 4px solid var(--theme-accent);
+}
+
+[data-theme="dark"] .user-message {
+    background: linear-gradient(135deg, var(--theme-primary), var(--theme-secondary));
+}
+
+[data-theme="dark"] scrollbar {
+    background: var(--theme-surface);
+}
+
+[data-theme="dark"] scrollbar-thumb {
+    background: var(--theme-border-light);
+}

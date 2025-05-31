@@ -8,12 +8,59 @@
     <meta name="theme-color" content="#FFD700">
     <meta name="description" content="HLNA - Intelligence Artificielle Évolutive capable d'apprendre, comprendre et imaginer de manière autonome">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="apple-touch-icon" href="https://via.placeholder.com/192x192/FFD700/000000?text=H">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">    <link rel="apple-touch-icon" href="https://via.placeholder.com/192x192/FFD700/000000?text=H">
+    
+    <!-- Styles CSS HLNA - Structure Modulaire -->
     <link rel="stylesheet" href="src/ui/styles.css">
+    <link rel="stylesheet" href="src/ui/theme-enhancements.css">
+    
+    <!-- Système de thèmes dynamiques -->
+    <link rel="stylesheet" href="assets/themes/dark/theme.css" id="theme-dark" disabled>
+    <link rel="stylesheet" href="assets/themes/light/theme.css" id="theme-light" disabled>
+    
+    <!-- Polices optimisées -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Variables CSS pour le thème -->
+    <style>
+        :root {
+            --theme-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * {
+            transition: var(--theme-transition);
+        }
+        
+        .theme-controls {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+        }
+        
+        .theme-toggle {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 8px;
+            color: var(--text-secondary, #fff);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            font-size: 18px;
+        }
+        
+        .theme-toggle:hover {
+            background: rgba(255, 215, 0, 0.2);
+            border-color: rgba(255, 215, 0, 0.5);
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body>
     <div class="cosmic-background">
@@ -32,6 +79,13 @@
                 <li><a href="#models" class="nav-link">Modèle</a></li>
                 <li><a href="#status" class="nav-link">Statut</a></li>
             </ul>
+            
+            <!-- Contrôles de thème -->
+            <div class="theme-controls">
+                <button class="theme-toggle" id="theme-toggle" title="Basculer le thème (Ctrl+Shift+T)">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -114,7 +168,8 @@
                                 <li>Mémoire conversationnelle</li>
                                 <li>Adaptation émotionnelle</li>
                             </ul>
-                        </div>                        <a href="chat.html" class="btn btn-primary">Aperçu Prototype</a>
+                        </div>                        
+                        <a href="chat.html" class="btn btn-primary">Aperçu Prototype</a>
                     </div>
                     <div class="dev-notice">
                         <h3>⚠️ Projet Privé</h3>
@@ -211,9 +266,11 @@
                     installButton.remove();
                 }
             });
-            
-            document.body.appendChild(installButton);
+                  document.body.appendChild(installButton);
         });
     </script>
+    
+    <!-- Script de contrôle des thèmes HLNA -->
+    <script src="src/ui/theme-controller.js"></script>
 </body>
 </html>

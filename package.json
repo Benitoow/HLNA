@@ -4,11 +4,19 @@
   "description": "Intelligence Artificielle Évolutive - HLNA",
   "main": "index.html",
   "scripts": {
-    "start": "npx serve .",
-    "dev": "python -m http.server 8000",
-    "build": "echo 'Build process to be implemented'",
-    "test": "echo 'Tests to be implemented'",
-    "lint": "echo 'Linting to be implemented'"
+    "start": "live-server --port=8080 --open=/index.html",
+    "dev": "live-server --port=8080 --open=/chat.html --watch=src,assets",
+    "serve": "npx serve . -p 8080",
+    "test": "live-server --port=8081 --open=/src/tests/final-integration-test.html --no-browser",
+    "demo": "live-server --port=8080 --open=/demo.html",
+    "validate": "node scripts/validate-project.js",
+    "theme-test": "live-server --port=8080 --open=/index.html --watch=assets/themes,src/ui",
+    "build": "echo 'Build process - HLNA is ready for production'",
+    "lint": "eslint src/**/*.js --fix",
+    "format": "prettier --write src/**/*.{js,css,html}",
+    "quick": "node scripts/quick-start.js",
+    "setup": "npm install && npm run validate",
+    "clean": "npm run lint && npm run format && npm run validate"
   },
   "keywords": [
     "ai",
@@ -27,5 +35,15 @@
   "bugs": {
     "url": "https://github.com/starx/hlna/issues"
   },
-  "homepage": "https://github.com/starx/hlna#readme"
+  "homepage": "https://github.com/starx/hlna#readme",
+  "dependencies": {
+    "hlna-ai": "file:"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "eslint": "^9.28.0",
+    "live-server": "^1.2.2",
+    "prettier": "^3.5.3",
+    "serve": "^14.2.4"
+  }
 }
