@@ -25,8 +25,7 @@ class HLNACSSValidator {
    */
   validateCSSFiles() {
     const requiredFiles = [
-      'src/ui/styles.css',
-      'src/ui/chat-new.css',
+      'src/ui/styles.css',      'src/ui/chat.css',
       'src/ui/theme-enhancements.css',
       'assets/themes/dark/theme.css',
       'assets/themes/light/theme.css',

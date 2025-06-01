@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HLNA Live Integration Demo</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        margin: 0;
+        padding: 20px;
+        min-height: 100vh;
+        color: white;
+      }
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 2.5em;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+      .demo-section {
+        margin: 20px 0;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        border-left: 4px solid #4caf50;
+      }
+      .test-input {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        font-size: 16px;
+      }
+      .test-input::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+      }
+      button {
+        background: linear-gradient(45deg, #4caf50, #45a049);
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 25px;
+        cursor: pointer;
+        margin: 5px;
+        transition: transform 0.2s;
+      }
+      button:hover {
+        transform: translateY(-2px);
+      }
+      .output {
+        background: rgba(0, 0, 0, 0.3);
+        padding: 15px;
+        border-radius: 8px;
+        margin: 10px 0;
+        font-family: monospace;
+        white-space: pre-wrap;
+        max-height: 200px;
+        overflow-y: auto;
+      }
+      .status-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        margin: 20px 0;
+      }
+      .status-card {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 15px;
+        border-radius: 10px;
+        text-align: center;
+      }
+      .status-indicator {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+      }
+      .online {
+        background-color: #4caf50;
+      }
+      .offline {
+        background-color: #f44336;
+      }
+      .pending {
+        background-color: #ffc107;
+      }
+      .metric {
+        display: flex;
+        justify-content: space-between;
+        margin: 5px 0;
+        padding: 5px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🧠 HLNA Live Integration Demo</h1>
+
+      <div class="demo-section">
+        <h3>📊 System Status</h3>
+        <div class="status-grid" id="systemStatus">
+          <div class="status-card">
+            <div class="status-indicator pending" id="coreIndicator"></div>
+            <h4>HLNA Core</h4>
+            <p id="coreStatus">Checking...</p>
+          </div>
+          <div class="status-card">
+            <div class="status-indicator pending" id="analyticsIndicator"></div>
+            <h4>Analytics</h4>
+            <p id="analyticsStatus">Checking...</p>
+          </div>
+          <div class="status-card">
+            <div class="status-indicator pending" id="webIndicator"></div>
+            <h4>Web Connection</h4>
+            <p id="webStatus">Checking...</p>
+          </div>
+          <div class="status-card">
+            <div class="status-indicator pending" id="chatIndicator"></div>
+            <h4>Chat Interface</h4>
+            <p id="chatStatus">Checking...</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-section">
+        <h3>🤖 AI Processing Demo</h3>
+        <input
+          type="text"
+          id="aiInput"
+          class="test-input"
+          placeholder="Enter a message to test AI processing..."
+        />
+        <button onclick="testAIProcessing()">Process with HLNA Core</button>
+        <div class="output" id="aiOutput">AI response will appear here...</div>
+      </div>
+
+      <div class="demo-section">
+        <h3>📈 Analytics Demo</h3>
+        <button onclick="testAnalytics()">Track Test Event</button>
+        <button onclick="showAnalyticsData()">Show Current Analytics</button>
+        <div class="output" id="analyticsOutput">
+          Analytics data will appear here...
+        </div>
+      </div>
+
+      <div class="demo-section">
+        <h3>🌐 Web Connection Demo</h3>
+        <input
+          type="text"
+          id="urlInput"
+          class="test-input"
+          placeholder="Enter a URL to test web connection..."
+        />
+        <button onclick="testWebConnection()">Test Connection</button>
+        <div class="output" id="webOutput">
+          Web connection results will appear here...
+        </div>
+      </div>
+
+      <div class="demo-section">
+        <h3>🔗 Full Integration Demo</h3>
+        <input
+          type="text"
+          id="fullTestInput"
+          class="test-input"
+          placeholder="Enter a complex query to test full integration..."
+        />
+        <button onclick="testFullIntegration()">Test Full Pipeline</button>
+        <div class="output" id="fullOutput">
+          Full integration results will appear here...
+        </div>
+      </div>
+
+      <div class="demo-section">
+        <h3>📋 Real-time Metrics</h3>
+        <div id="metricsDisplay">
+          <div class="metric">
+            <span>Total Messages:</span><span id="totalMessages">0</span>
+          </div>
+          <div class="metric">
+            <span>Avg Response Time:</span><span id="avgResponseTime">0ms</span>
+          </div>
+          <div class="metric">
+            <span>Last Sentiment:</span><span id="lastSentiment">none</span>
+          </div>
+          <div class="metric">
+            <span>Complexity Score:</span><span id="complexityScore">0</span>
+          </div>
+          <div class="metric">
+            <span>Web Requests:</span><span id="webRequests">0</span>
+          </div>
+        </div>
+        <button onclick="updateMetrics()">Refresh Metrics</button>
+      </div>
+    </div>
+
+    <!-- Load all HLNA modules -->
+    <script src="analytics.js"></script>
+    <script src="web-connection.js"></script>
+    <script src="hlna-core.js"></script>
+    <script src="integration-test.js"></script>
+
+    <script>
+      // Demo application state
+      let demoStats = {
+        totalMessages: 0,
+        responseTime: [],
+        lastSentiment: 'none',
+        complexityScore: 0,
+        webRequests: 0,
+      };
+
+      // Wait for modules to load
+      function waitForModules() {
+        return new Promise(resolve => {
+          const checkModules = () => {
+            if (
+              window.HLNACore &&
+              window.HLNAAnalytics &&
+              window.HLNAWebConnection
+            ) {
+              resolve();
+            } else {
+              setTimeout(checkModules, 100);
+            }
+          };
+          checkModules();
+        });
+      }
+
+      // Update system status indicators
+      function updateSystemStatus() {
+        const modules = [
+          {
+            name: 'core',
+            obj: 'HLNACore',
+            indicator: 'coreIndicator',
+            status: 'coreStatus',
+          },
+          {
+            name: 'analytics',
+            obj: 'HLNAAnalytics',
+            indicator: 'analyticsIndicator',
+            status: 'analyticsStatus',
+          },
+          {
+            name: 'web',
+            obj: 'HLNAWebConnection',
+            indicator: 'webIndicator',
+            status: 'webStatus',
+          },
+          {
+            name: 'chat',
+            obj: 'HLNAIntegrationTest',
+            indicator: 'chatIndicator',
+            status: 'chatStatus',
+          },
+        ];
+
+        modules.forEach(module => {
+          const available = typeof window[module.obj] !== 'undefined';
+          const indicator = document.getElementById(module.indicator);
+          const status = document.getElementById(module.status);
+
+          if (available) {
+            indicator.className = 'status-indicator online';
+            status.textContent = 'Online';
+          } else {
+            indicator.className = 'status-indicator offline';
+            status.textContent = 'Offline';
+          }
+        });
+      }
+
+      // AI Processing Demo
+      async function testAIProcessing() {
+        const input = document.getElementById('aiInput').value;
+        const output = document.getElementById('aiOutput');
+
+        if (!input) {
+          output.textContent = 'Please enter a message first.';
+          return;
+        }
+
+        try {
+          const startTime = Date.now();
+          output.textContent = 'Processing with HLNA Core...';
+
+          const response = await window.HLNACore.processMessage(input);
+          const responseTime = Date.now() - startTime;
+
+          demoStats.totalMessages++;
+          demoStats.responseTime.push(responseTime);
+
+          // Track with analytics
+          window.HLNAAnalytics.track('ai_processing_demo', {
+            input: input,
+            responseTime: responseTime,
+            success: true,
+          });
+
+          output.textContent = `Response (${responseTime}ms):\\n${JSON.stringify(response, null, 2)}`;
+          updateMetrics();
+        } catch (error) {
+          output.textContent = `Error: ${error.message}`;
+          window.HLNAAnalytics.track('ai_processing_error', {
+            error: error.message,
+          });
+        }
+      }
+
+      // Analytics Demo
+      function testAnalytics() {
+        const output = document.getElementById('analyticsOutput');
+
+        try {
+          const testEvent = {
+            type: 'demo_test',
+            timestamp: Date.now(),
+            data: {
+              user_action: 'button_click',
+              demo_section: 'analytics',
+            },
+          };
+
+          window.HLNAAnalytics.track('demo_analytics_test', testEvent);
+          output.textContent = `Event tracked successfully:\\n${JSON.stringify(testEvent, null, 2)}`;
+        } catch (error) {
+          output.textContent = `Error: ${error.message}`;
+        }
+      }
+
+      function showAnalyticsData() {
+        const output = document.getElementById('analyticsOutput');
+
+        try {
+          const data = window.HLNAAnalytics.getMetrics();
+          output.textContent = `Current Analytics Data:\\n${JSON.stringify(data, null, 2)}`;
+        } catch (error) {
+          output.textContent = `Error: ${error.message}`;
+        }
+      }
+
+      // Web Connection Demo
+      async function testWebConnection() {
+        const url = document.getElementById('urlInput').value;
+        const output = document.getElementById('webOutput');
+
+        if (!url) {
+          output.textContent = 'Please enter a URL first.';
+          return;
+        }
+
+        try {
+          output.textContent = 'Testing web connection...';
+          demoStats.webRequests++;
+
+          const result = await window.HLNAWebConnection.fetchContent(url);
+          output.textContent = `Connection successful:\\n${JSON.stringify(result, null, 2)}`;
+
+          window.HLNAAnalytics.track('web_connection_demo', {
+            url: url,
+            success: true,
+            responseTime: result.responseTime || 0,
+          });
+
+          updateMetrics();
+        } catch (error) {
+          output.textContent = `Connection failed: ${error.message}`;
+          window.HLNAAnalytics.track('web_connection_error', {
+            url: url,
+            error: error.message,
+          });
+        }
+      }
+
+      // Full Integration Demo
+      async function testFullIntegration() {
+        const input = document.getElementById('fullTestInput').value;
+        const output = document.getElementById('fullOutput');
+
+        if (!input) {
+          output.textContent = 'Please enter a query first.';
+          return;
+        }
+
+        try {
+          output.textContent = 'Running full integration test...';
+          const startTime = Date.now();
+
+          // 1. Analyze with Core
+          const aiResponse = await window.HLNACore.processMessage(input);
+
+          // 2. Track with Analytics
+          window.HLNAAnalytics.track('full_integration_test', {
+            input: input,
+            ai_response: aiResponse,
+          });
+
+          // 3. Get sentiment and complexity
+          const sentiment = window.HLNACore.detectEmotion(input);
+          const complexity = window.HLNACore.assessComplexity(input);
+
+          demoStats.lastSentiment = sentiment.primary || 'neutral';
+          demoStats.complexityScore = complexity.score || 0;
+
+          const totalTime = Date.now() - startTime;
+
+          const result = {
+            input: input,
+            aiResponse: aiResponse,
+            sentiment: sentiment,
+            complexity: complexity,
+            processingTime: totalTime,
+            timestamp: new Date().toISOString(),
+          };
+
+          output.textContent = `Full Integration Result:\\n${JSON.stringify(result, null, 2)}`;
+          updateMetrics();
+        } catch (error) {
+          output.textContent = `Integration test failed: ${error.message}`;
+        }
+      }
+
+      // Update metrics display
+      function updateMetrics() {
+        document.getElementById('totalMessages').textContent =
+          demoStats.totalMessages;
+
+        const avgTime =
+          demoStats.responseTime.length > 0
+            ? Math.round(
+                demoStats.responseTime.reduce((a, b) => a + b, 0) /
+                  demoStats.responseTime.length
+              )
+            : 0;
+        document.getElementById('avgResponseTime').textContent = `${avgTime}ms`;
+
+        document.getElementById('lastSentiment').textContent =
+          demoStats.lastSentiment;
+        document.getElementById('complexityScore').textContent =
+          demoStats.complexityScore;
+        document.getElementById('webRequests').textContent =
+          demoStats.webRequests;
+      }
+
+      // Initialize when page loads
+      window.addEventListener('load', async () => {
+        console.log('🌟 HLNA Live Demo loaded');
+
+        // Wait for modules
+        await waitForModules();
+        console.log('✅ All modules loaded for demo');
+
+        // Update status
+        updateSystemStatus();
+
+        // Update status every 5 seconds
+        setInterval(updateSystemStatus, 5000);
+
+        console.log('🚀 Demo ready for testing');
+      });
+    </script>
+  </body>
+</html>

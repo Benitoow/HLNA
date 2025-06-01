@@ -85,8 +85,8 @@ HLNA/
 │   │   ├── analytics.js    # Système d'analytics
 │   │   └── web-connection.js # Connexion web
 │   ├── ui/                 # Interface utilisateur
-│   │   ├── chat-new.js     # Interface chat moderne
-│   │   ├── chat-new.css    # Styles chat
+│   │   ├── chat.js        # Interface chat moderne
+│   │   ├── chat.css       # Styles chat
 │   │   ├── script.js       # JavaScript principal
 │   │   └── styles.css      # Styles principaux
 │   └── tests/              # Tests et démonstrations
@@ -160,8 +160,8 @@ npx serve .
 3. **Accédez aux interfaces**
 - **Principal**: `http://localhost:8000`
 - **Chat**: `http://localhost:8000/chat.html`
-- **Demo**: `http://localhost:8000/src/tests/demo.html`
-- **Tests**: `http://localhost:8000/src/tests/integration-test.html`
+- **Demo**: `http://localhost:8000/tests/demo.html`
+- **Tests**: `http://localhost:8000/tests/integration-test.html`
 
 ## 🎯 Vision
 

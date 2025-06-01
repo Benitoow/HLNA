@@ -2,17 +2,17 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>HLNA Chat - Interface Évolutive</title>
-    <link rel="manifest" href="manifest.json">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>HLNA Chat - Interface Évolutive</title>    <link rel="manifest" href="../public/manifest.json">
     <meta name="theme-color" content="#FFD700">
     <meta name="description" content="Interface de chat avec HLNA - Intelligence Artificielle Évolutive">
       <!-- Styles CSS HLNA - Structure Modulaire -->
-    <link rel="stylesheet" href="src/ui/styles.css">    <link rel="stylesheet" href="src/ui/chat.css">
-    <link rel="stylesheet" href="src/ui/theme-enhancements.css">
+    <link rel="stylesheet" href="../src/ui/styles.css">
+    <link rel="stylesheet" href="../src/ui/chat.css">
+    <link rel="stylesheet" href="../src/ui/theme-enhancements.css">
     
     <!-- Système de thèmes dynamiques -->
-    <link rel="stylesheet" href="assets/themes/dark/theme.css" id="theme-dark" disabled>
-    <link rel="stylesheet" href="assets/themes/light/theme.css" id="theme-light" disabled>
+    <link rel="stylesheet" href="../assets/themes/dark/theme.css" id="theme-dark" disabled>
+    <link rel="stylesheet" href="../assets/themes/light/theme.css" id="theme-light" disabled>
     
     <!-- Polices optimisées -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -264,16 +264,17 @@
     </main>
 
     <!-- Overlay pour mobile -->
-    <div class="mobile-overlay" id="mobile-overlay"></div>    <!-- Scripts -->    <script src="src/modules/analytics.js"></script>
-    <script src="src/modules/web-connection.js"></script>
-    <script src="src/core/hlna-core.js"></script>    <script src="src/ui/theme-controller.js"></script>
-    <script src="src/ui/chat.js"></script>
-    <script src="tests/integration-test.js"></script>
+    <div class="mobile-overlay" id="mobile-overlay"></div>    <!-- Scripts -->    <script src="../src/modules/analytics.js"></script>
+    <script src="../src/modules/web-connection.js"></script>
+    <script src="../src/core/hlna-core.js"></script>
+    <script src="../src/ui/theme-controller.js"></script>
+    <script src="../src/ui/chat.js"></script>
+    <script src="../tests/integration-test.js"></script>
     <script>
         // Enregistrement du Service Worker pour PWA
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js')
+                navigator.serviceWorker.register('../public/sw.js')
                     .then((registration) => {
                         console.log('HLNA SW enregistré: ', registration.scope);
                     })

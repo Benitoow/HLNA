@@ -10,7 +10,7 @@ The HLNA project has been successfully integrated into a fully functional, produ
 - ✅ `analytics.js` - Real-time analytics and tracking system
 - ✅ `web-connection.js` - Web connectivity and data fetching
 - ✅ `hlna-core.js` - Core AI processing engine
-- ✅ `chat-new.js` - Integrated chat interface with full module connectivity
+- ✅ `chat.js` - Integrated chat interface with full module connectivity
 
 ### 2. **Enhanced Chat Interface**
 - ✅ Real AI processing replacing simulated responses
@@ -55,7 +55,7 @@ The HLNA project has been successfully integrated into a fully functional, produ
 1. analytics.js      // Analytics system
 2. web-connection.js // Web connectivity  
 3. hlna-core.js      // AI processing core
-4. chat-new.js       // Integrated interface
+4. chat.js          // Integrated interface
 5. integration-test.js // Testing framework
 ```
 

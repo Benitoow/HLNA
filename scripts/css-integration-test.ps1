@@ -8,8 +8,7 @@ Write-Host ""
 Write-Host "1. Checking CSS files existence..." -ForegroundColor Yellow
 
 $cssFiles = @(
-    "src/ui/styles.css",
-    "src/ui/chat-new.css", 
+    "src/ui/styles.css",    "src/ui/chat.css", 
     "src/ui/theme-enhancements.css",
     "assets/themes/dark/theme.css",
     "assets/themes/light/theme.css"
@@ -29,8 +28,7 @@ foreach ($file in $cssFiles) {
 Write-Host "`n2. Checking JavaScript files..." -ForegroundColor Yellow
 
 $jsFiles = @(
-    "src/ui/theme-controller.js",
-    "src/ui/chat-new.js"
+    "src/ui/theme-controller.js",    "src/ui/chat.js"
 )
 
 foreach ($file in $jsFiles) {

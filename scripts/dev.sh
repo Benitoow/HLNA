@@ -55,8 +55,8 @@ start_dev_server() {
 📖 URLs Disponibles:
    🏠 Accueil:          http://localhost:$port/
    💬 Chat:             http://localhost:$port/chat.html
-   🧪 Tests:            http://localhost:$port/src/tests/demo.html
-   📊 Intégration:      http://localhost:$port/src/tests/integration-test.html
+   🧪 Tests:            http://localhost:$port/tests/demo.html
+   📊 Intégration:      http://localhost:$port/tests/integration-test.html
    📚 Documentation:    http://localhost:$port/docs/
 "
     
@@ -96,7 +96,7 @@ test_project() {
     local all_exists=true
     
     # Vérifier la structure
-    required_dirs=("src" "src/core" "src/modules" "src/ui" "src/tests" "docs" "assets")
+    required_dirs=("src" "src/core" "src/modules" "src/ui" "tests" "docs" "assets")
     
     for dir in "${required_dirs[@]}"; do
         if [ -d "$PROJECT_ROOT/$dir" ]; then
@@ -225,8 +225,8 @@ Usage: ./dev.sh [action] [options]
 🌐 URLs de développement:
    http://localhost:8000/                          - Accueil
    http://localhost:8000/chat.html                 - Interface Chat
-   http://localhost:8000/src/tests/demo.html       - Démonstration
-   http://localhost:8000/src/tests/integration-test.html - Tests
+   http://localhost:8000/tests/demo.html       - Démonstration
+   http://localhost:8000/tests/integration-test.html - Tests
 
 🔧 Dépendances optionnelles:
    fswatch ou inotifywait  - Surveillance des fichiers

@@ -25,7 +25,7 @@
    - Géolocalisation et notifications
    - Capacités web détectées
 
-4. **Interface Chat Moderne** (`chat-new.js`, `chat-new.css`)
+4. **Interface Chat Moderne** (`chat.js`, `chat.css`)
    - Design épuré et professionnel
    - Intégration complète avec tous les modules
    - Analytics en temps réel
@@ -55,8 +55,8 @@ HLNA/
 │   └── web-connection.js     # Connexion web
 ├── Interface/
 │   ├── chat.html             # Interface principale
-│   ├── chat-new.js           # Logique interface
-│   └── chat-new.css          # Styles modernes
+│   ├── chat.js              # Logique interface
+│   └── chat.css             # Styles modernes
 ├── PWA/
 │   ├── manifest.json         # Configuration PWA
 │   └── sw.js                 # Service Worker
@@ -158,7 +158,7 @@ HLNAIntegrationTest.getResults()
 
 2. **Intégrer dans l'interface**
    ```javascript
-   // chat-new.js
+   // chat.js
    if (this.hlnaCore) {
        this.hlnaCore.newFeature(params);
    }

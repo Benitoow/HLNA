@@ -53,9 +53,8 @@ function Start-DevServer {
 
 URLs Disponibles:
    Accueil:          http://localhost:$ServerPort/
-   Chat:             http://localhost:$ServerPort/chat.html
-   Tests:            http://localhost:$ServerPort/src/tests/demo.html
-   Integration:      http://localhost:$ServerPort/src/tests/integration-test.html
+   Chat:             http://localhost:$ServerPort/chat.html   Tests:            http://localhost:$ServerPort/tests/demo.html
+   Integration:      http://localhost:$ServerPort/tests/integration-test.html
    Documentation:    http://localhost:$ServerPort/docs/
 
 "@
@@ -73,7 +72,7 @@ function Test-Project {
     Write-ColorOutput Cyan "Execution des tests..."
     
     # Vérifier la structure
-    $requiredDirs = @("src", "src/core", "src/modules", "src/ui", "src/tests", "docs", "assets")
+    $requiredDirs = @("src", "src/core", "src/modules", "src/ui", "tests", "docs", "assets")
     $allExists = $true
     
     foreach ($dir in $requiredDirs) {
@@ -186,7 +185,7 @@ Exemples:
 URLs de developpement:
    http://localhost:8000/                          - Accueil
    http://localhost:8000/chat.html                 - Interface Chat
-   http://localhost:8000/src/tests/demo.html       - Demonstration
+   http://localhost:8000/tests/demo.html       - Demonstration
    http://localhost:8000/src/tests/integration-test.html - Tests
 
 "@

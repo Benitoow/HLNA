@@ -28,15 +28,41 @@ HLNA/
 │   │   ├── 📄 analytics.js         # Système d'analytics
 │   │   └── 📄 web-connection.js    # Module connexion web
 │   ├── 📂 ui/                      # Interface utilisateur
-│   │   ├── 📄 chat-new.js          # Chat interface moderne
-│   │   ├── 📄 chat-new.css         # Styles chat moderne
+│   │   ├── 📄 chat.js             # Chat interface moderne
+│   │   ├── 📄 chat.css            # Styles chat moderne
 │   │   ├── 📄 script.js            # JavaScript principal
-│   │   └── 📄 styles.css           # Styles principaux
-│   └── 📂 tests/                   # Tests et démonstrations
-│       ├── 📄 demo.html            # Démonstration interactive
-│       ├── 📄 integration-test.html # Tests visuels
-│       ├── 📄 integration-test.js   # Framework de tests
-│       └── 📄 final-integration-test.html # Test d'intégration complet
+│   │   ├── 📄 styles.css           # Styles principaux
+│   │   ├── 📄 theme-controller.js  # Contrôleur de thèmes
+│   │   ├── 📄 theme-enhancements.css # Améliorations thèmes
+│   │   └── 📂 archive/             # Anciennes versions
+│   │       ├── 📄 chat-old.js      # Ancienne interface chat
+│   │       └── 📄 chat-old.css     # Anciens styles chat
+│
+├── 📂 tests/                       # Tests et démonstrations
+│   ├── 📄 demo.html                # Démonstration interactive
+│   ├── 📄 documentation.html       # Documentation interactive
+│   ├── 📄 integration-test.html    # Tests visuels
+│   ├── 📄 integration-test.js      # Framework de tests
+│   └── 📄 final-integration-test.html # Test d'intégration complet
+│
+├── 📂 pages/                       # Pages organisées
+│   ├── 📄 chat.html                # Interface chat
+│   └── 📄 index.html               # Page d'accueil
+│
+├── 📂 config/                      # Configuration
+│   ├── 📄 eslint.config.js         # Configuration ESLint
+│   └── 📄 project.json             # Configuration projet
+│
+├── 📂 public/                      # Fichiers publics PWA
+│   ├── 📄 manifest.json            # Manifest PWA
+│   └── 📄 sw.js                    # Service Worker
+│
+├── 📂 scripts/                     # Scripts de développement
+│   ├── 📄 dev.ps1                  # Script PowerShell
+│   ├── 📄 dev.sh                   # Script Bash
+│   ├── 📄 validate-project.js      # Validation
+│   ├── 📄 quick-start.js           # Démarrage rapide
+│   └── 📄 auto-setup.js            # Configuration auto
 │
 ├── 📂 docs/                        # Documentation
 │   ├── 📄 DEVELOPMENT.md           # Guide développement
@@ -71,7 +97,7 @@ HLNA/
 - **`src/core/`** - Moteur IA central isolé
 - **`src/modules/`** - Modules fonctionnels indépendants
 - **`src/ui/`** - Interface utilisateur séparée
-- **`src/tests/`** - Tests et démonstrations organisés
+- **`tests/`** - Tests et démonstrations organisés
 
 ### 🔧 **Configuration Avancée**
 - **`.gitignore`** mis à jour avec règles HLNA spécifiques
@@ -92,9 +118,9 @@ HLNA/
 - **`http://localhost:8000/chat.html`** - Chat intégré
 
 ### Tests et Démonstrations
-- **`http://localhost:8000/src/tests/demo.html`** - Démo interactive
-- **`http://localhost:8000/src/tests/integration-test.html`** - Tests automatisés
-- **`http://localhost:8000/src/tests/final-integration-test.html`** - Test d'intégration complet
+- **`http://localhost:8000/tests/demo.html`** - Démo interactive
+- **`http://localhost:8000/tests/integration-test.html`** - Tests automatisés
+- **`http://localhost:8000/tests/final-integration-test.html`** - Test d'intégration complet
 
 ## 🚀 **Avantages de la Nouvelle Structure**
 
@@ -169,8 +195,8 @@ python -m http.server 8000
 ```
 
 ### Tests
-- **Démo**: `http://localhost:8000/src/tests/demo.html`
-- **Integration**: `http://localhost:8000/src/tests/integration-test.html`
+- **Démo**: `http://localhost:8000/tests/demo.html`
+- **Integration**: `http://localhost:8000/tests/integration-test.html`
 
 ## 📈 **Métriques de l'Organisation**
 

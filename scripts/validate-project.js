@@ -10,28 +10,24 @@ console.log('🚀 HLNA Project Validation - Node.js Edition\n');
 // Configuration des fichiers à vérifier
 const requiredFiles = {
     css: [
-        'src/ui/styles.css',
-        'src/ui/chat-new.css', 
+        'src/ui/styles.css',        'src/ui/chat.css', 
         'src/ui/theme-enhancements.css',
         'assets/themes/dark/theme.css',
         'assets/themes/light/theme.css'
-    ],
-    js: [
+    ],    js: [
         'src/ui/theme-controller.js',
-        'src/ui/chat-new.js',
+        'src/ui/chat.js',
         'src/core/hlna-core.js',
         'src/modules/analytics.js',
         'src/modules/web-connection.js'
-    ],
-    html: [
+    ],    html: [
         'index.html',
         'chat.html',
-        'demo.html',
-        'src/tests/final-integration-test.html'
-    ],
-    config: [
+        'tests/demo.html',
+        'tests/final-integration-test.html'
+    ],    config: [
         'package.json',
-        'manifest.json',
+        'public/manifest.json',
         'assets/themes/theme-config.json'
     ]
 };

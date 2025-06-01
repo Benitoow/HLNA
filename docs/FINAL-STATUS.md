@@ -14,7 +14,7 @@ The HLNA (Intelligence Artificielle Évolutive) project has reached full complet
 - ✅ **HLNA Core AI Engine** (`src/core/hlna-core.js`)
 - ✅ **Analytics System** (`src/modules/analytics.js`)
 - ✅ **Web Connectivity** (`src/modules/web-connection.js`)
-- ✅ **Chat Interface** (`src/ui/chat-new.js`)
+- ✅ **Chat Interface** (`src/ui/chat.js`)
 - ✅ **Real-time Status Monitoring**
 
 ### **2. CSS & Theme System Integration**
@@ -27,7 +27,7 @@ The HLNA (Intelligence Artificielle Évolutive) project has reached full complet
 
 ### **3. Testing & Validation Infrastructure**
 - ✅ **CSS Integration Test Script** (`scripts/css-integration-test.ps1`)
-- ✅ **Automated Testing Suite** (`src/tests/final-integration-test.html`)
+- ✅ **Automated Testing Suite** (`tests/final-integration-test.html`)
 - ✅ **Performance Monitoring** (Real-time metrics)
 - ✅ **Visual Status Indicators** (System health monitoring)
 
